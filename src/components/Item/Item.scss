@@ -1,0 +1,115 @@
+// @import "bootstrap";
+
+// .card-columns {
+//   @include media-breakpoint-only(xl) {
+//     column-count: 4;
+//   }
+
+//   @include media-breakpoint-only(lg) {
+//     column-count: 3;
+//   }
+
+//   @include media-breakpoint-only(md) {
+//     column-count: 2;
+//   }
+
+//   @include media-breakpoint-only(sm) {
+//     column-count: 1;
+//   }
+
+//   .card {
+//     // border: 1px solid red;
+//     cursor: pointer;
+//   }
+
+//   .card:hover {
+//     opacity: 0.3;
+//   }
+
+//   .middle {
+//     transition: 0.5s ease;
+//     opacity: 0;
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     -ms-transform: translate(-50%, -50%);
+
+//     .text {
+//       background-color: lightblue;
+//       font-size: 16px;
+//       padding: 16px 32px;
+//       border-radius: 4px;
+//       cursor: pointer;
+//     }
+//   }
+
+//   .middle:hover {
+//     opacity: 1;
+//   }
+// }
+
+.product {
+  // border: 1px solid red;
+
+  text-align: center;
+  background: white;
+  margin: 16px;
+  width: 200px;
+  border-radius: 4px;
+  .product-image {
+    overflow: hidden;
+    border-radius: 2px 2px 0 0;
+    max-height: 200px;
+    img {
+      cursor: pointer;
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      transition: transform 300ms ease-in;
+      transform: scale(1);
+      @media (min-width: 991px) {
+        min-height: 200px;
+      }
+    }
+  }
+  .product-name {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 8px;
+    min-height: 100px;
+  }
+  .product-brand {
+    margin-top: 8px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  .product-price {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+  .product-name,
+  .product-price {
+    color: gray;
+    padding: 0 16px;
+    text-align: center;
+  }
+  .product-action {
+    padding: 16px;
+    button {
+      width: 100%;
+      transition: all 300ms ease-in;
+      &.added {
+        background: orange;
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}

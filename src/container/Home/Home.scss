@@ -1,0 +1,147 @@
+.content-wrapper {
+  background-color: #f5f5f5;
+  .k-dialog-buttongroup {
+    padding: 10px;
+  }
+
+  .dialogHeader {
+    .k-dialog {
+      .k-dialog-title {
+        justify-content: center;
+        font-size: 28px;
+        font-family: Roboto;
+      }
+      .k-dialog-titlebar {
+        background-color: orangered;
+        justify-content: center;
+      }
+      .k-dialog-content {
+      }
+    }
+
+    @media (max-width: 480px) {
+      width: 85% !important;
+      height: 60% !important;
+      margin-left: 20px;
+    }
+    .content {
+      margin-top: 60px;
+      font-size: 20px;
+      text-align: center;
+      font-family: Roboto;
+    }
+
+    .thanks {
+      margin-top: 40px;
+      font-size: 20px;
+      text-align: center;
+      font-family: Roboto;
+    }
+
+    .icon-container {
+      text-align: center;
+      margin-top: 30px;
+      .fa-thumbs-up {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .scrollable-container {
+    overflow-y: auto;
+    min-height: 620px;
+    max-height: 620px;
+  }
+
+  .empty-cart-container {
+    min-height: 600px;
+    margin-top: 20px;
+    .empty-cart {
+      width: 100%;
+      max-width: 730px;
+    }
+  }
+
+  .item-added {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+
+  .item-added {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 30px;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      bottom: 30px;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+
+  .k-dialog {
+    @media (max-width: 480px) {
+      width: 85% !important;
+      height: 81% !important;
+    }
+  }
+}
+
+.item-wrapper {
+  justify-content: center;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  padding: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
