@@ -1,12 +1,10 @@
-.product {
-  // border: 1px solid red;
-
+.item {
   text-align: center;
   background: white;
   margin: 16px;
   width: 200px;
   border-radius: 4px;
-  .product-image {
+  .item-image {
     overflow: hidden;
     border-radius: 2px 2px 0 0;
     max-height: 200px;
@@ -22,33 +20,33 @@
       }
     }
   }
-  .product-name {
+  .item-name {
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 8px;
     min-height: 100px;
   }
-  .product-brand {
+  .item-brand {
     margin-top: 8px;
     font-weight: normal;
     font-size: 18px;
     line-height: 20px;
     margin-bottom: 8px;
   }
-  .product-price {
+  .item-price {
     font-size: 22px;
     font-weight: 700;
     line-height: 22px;
     margin-bottom: 16px;
   }
-  .product-name,
-  .product-price {
+  .item-name,
+  .item-price {
     color: gray;
     padding: 0 16px;
     text-align: center;
   }
-  .product-action {
+  .item-action {
     padding: 16px;
     button {
       width: 100%;

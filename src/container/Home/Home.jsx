@@ -19,12 +19,11 @@ class Home extends React.Component {
       data: [],
       cart: [],
       scroll: false,
-      expanded: false,
       openDialog: false,
       showCart: false,
       itemAdded: false,
       totalPrice: 0,
-      covid: false,
+      covid: true,
     };
   }
 
@@ -54,8 +53,6 @@ class Home extends React.Component {
   }
 
   onChange = (event) => {
-    console.log(event.target.value);
-
     if (event.target.value === "Availability") {
       let tempAvailability = this.state.data.sort((a, b) => {
         return a.isAvailable - b.isAvailable;
@@ -153,7 +150,7 @@ class Home extends React.Component {
   };
 
   listenScrollEvent = (event) => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 300) {
       this.setState({ scroll: true });
     } else {
       this.setState({ scroll: false });
@@ -161,7 +158,6 @@ class Home extends React.Component {
   };
 
   removeFromCart = (item) => {
-    console.log(item);
     let itemIndex = this.getItemIndexInCart(item);
     if (itemIndex === -1) {
       console.error("Item not found in cart.");
@@ -174,21 +170,6 @@ class Home extends React.Component {
       totalPrice: this.getTotalPrice(),
     });
   };
-
-  // removeFromCart = (item) => {
-  //   console.log(item);
-  //   for (let i = 0; i < this.state.cart.length; i++) {
-  //     if (item.price === this.state.cart[i].price) {
-  //       let index = this.state.cart.indexOf(this.state.cart[i]);
-  //       let deletedItem = this.state.cart.splice(index, 1);
-  //       let tempTotal = this.state.totalPrice - deletedItem[0].price;
-  //       this.setState(this.state.cart);
-  //       this.setState({
-  //         totalPrice: tempTotal,
-  //       });
-  //     }
-  //   }
-  // };
 
   viewCart = () => {
     this.setState({
@@ -220,7 +201,6 @@ class Home extends React.Component {
         continue;
       }
     }
-
     return -1;
   };
 
@@ -234,7 +214,6 @@ class Home extends React.Component {
         continue;
       }
     }
-
     return -1;
   };
 
@@ -245,26 +224,21 @@ class Home extends React.Component {
     for (let idx = 0; idx < items.length; idx++) {
       price += items[idx].quantity * items[idx].price;
     }
-
     return price;
   };
 
   changeQty = (dataItem, selectedQuantity) => {
-    console.log("xxxxxxxx", dataItem, selectedQuantity);
     let updatedCart = this.state.cart;
     let itemIndexInCart = this.getItemIndexInCart(dataItem);
     updatedCart[itemIndexInCart].quantity = selectedQuantity;
-    this.setState(
-      {
-        cart: updatedCart,
-        totalPrice: this.getTotalPrice(),
-        itemAdded: true,
-      },
-      () => {
-        console.log("CART: ", this.state.cart);
-        this.setState({ itemAdded: false });
-      }
-    );
+    this.setState({
+      cart: updatedCart,
+      totalPrice: this.getTotalPrice(),
+      itemAdded: true,
+    });
+    setTimeout(() => {
+      this.setState({ itemAdded: false });
+    }, 3000);
   };
 
   addToCart = (dataItem) => {
@@ -272,17 +246,14 @@ class Home extends React.Component {
       console.log(dataItem);
 
       let updatedCart = this.state.cart;
-
       let itemIndexInCart = this.getItemIndexInCart(dataItem);
 
       if (itemIndexInCart !== -1) {
-        // just increase the quantity
         updatedCart[itemIndexInCart].quantity += 1;
         if (
           updatedCart[itemIndexInCart].quantity >
           updatedCart[itemIndexInCart].maxOrderQuantity
         ) {
-          // can't add
           console.error("No product left to add");
           return;
         }
@@ -293,43 +264,16 @@ class Home extends React.Component {
         updatedCart.push(itemCopy);
       }
 
-      this.setState(
-        {
-          cart: updatedCart,
-          totalPrice: this.getTotalPrice(),
-          itemAdded: true,
-        },
-        () => {
-          console.log("CART: ", this.state.cart);
-          this.setState({ itemAdded: false });
-        }
-      );
-
-      // this.state.cart.push(dataItem);
-      // this.setState(this.state.cart);
-      // this.setState({
-      //   itemAdded: true,
-      //   totalPrice: this.state.totalPrice + dataItem.price,
-      // });
-      // setTimeout(() => {
-      //   this.setState({ itemAdded: false });
-      // }, 3000);
+      this.setState({
+        cart: updatedCart,
+        itemAdded: true,
+        totalPrice: this.getTotalPrice(),
+      });
+      setTimeout(() => {
+        this.setState({ itemAdded: false });
+      }, 3000);
     }
   };
-
-  // addToCart = () => {
-  //   if (this.state.tempItem.displayOrder >= 1) {
-  //     let temp = this.state.tempItem;
-  //     this.state.cart.push(temp);
-  //     this.setState(this.state.cart);
-  //     this.setState(
-  //       {
-  //         openDialog: false,
-  //       },
-  //       () => {}
-  //     );
-  //   }
-  // };
 
   showDetails = (dataItem) => {
     this.setState({
@@ -356,12 +300,11 @@ class Home extends React.Component {
               ) : (
                 <span>
                   Item Details -{" "}
-                  <span style={{ color: "red" }}>Out of Stock</span>{" "}
+                  <span className="out-of-stock">Out of Stock</span>{" "}
                 </span>
               )
             }
             onClose={this.toggleDialog}
-            style={{ border: "1px solid purple" }}
             width="60%"
             height="49%"
           >
@@ -429,7 +372,6 @@ class Home extends React.Component {
             width: "100%",
             height: "auto",
           }}
-          className="video-container"
         >
           <source src={this.state.videoUrl} type="video/mp4" />
         </video>
@@ -493,8 +435,6 @@ class Home extends React.Component {
                     Total : {this.state.cart[0].currency}{" "}
                     {this.state.totalPrice.toFixed(2)} {"(plus tax)"}
                   </button>
-                  {/* Total : {this.state.cart[0].currency}{" "}
-                  {this.state.totalPrice.toFixed(2)} {"(plus tax)"} */}
                 </div>
               </div>
             </>

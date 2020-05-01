@@ -10,20 +10,6 @@ class Cart extends React.Component {
 
   count = [1, 2, 3, 4, 5];
 
-  DeleteIconCell = (rowProps) => {
-    return (
-      <td>
-        <i
-          class="fas fa-times"
-          style={{ fontSize: "30px" }}
-          onClick={() =>
-            this.props.deleteRow(this.props.index, rowProps.dataIndex - 1)
-          }
-        ></i>
-      </td>
-    );
-  };
-
   render() {
     const { removeFromCart, changeQty } = this.props;
     return (

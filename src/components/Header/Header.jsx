@@ -11,24 +11,14 @@ class Header extends React.Component {
 
   getTotalQuantity = (items) => {
     let quantity = 0;
-
     for (let idx = 0; idx < items.length; idx++) {
       quantity += items[idx].quantity;
     }
-
     return quantity;
   };
 
   render() {
-    const {
-      onClickShop,
-      onClickBrands,
-      onClickAbout,
-      onClickContact,
-      onClickHome,
-      onClickCart,
-      viewCart,
-    } = this.props;
+    const { onClickShop, onClickHome, onClickCart } = this.props;
     return (
       <header>
         {this.props.scrollEvent ? (
@@ -64,8 +54,7 @@ class Header extends React.Component {
                 Count :{" "}
                 {this.props.itemInCart
                   ? this.props.itemInCart.length
-                    ? // ? this.props.itemInCart.length
-                      this.getTotalQuantity(this.props.itemInCart)
+                    ? this.getTotalQuantity(this.props.itemInCart)
                     : 0
                   : ""}{" "}
               </p>
@@ -81,7 +70,6 @@ class Header extends React.Component {
             </div>
           </div>
         ) : (
-          // </div>
           <div className="header-container justify-content-center">
             <div
               className="home"
@@ -114,8 +102,7 @@ class Header extends React.Component {
                 Count :{" "}
                 {this.props.itemInCart
                   ? this.props.itemInCart.length
-                    ? // ? this.props.itemInCart.length
-                      this.getTotalQuantity(this.props.itemInCart)
+                    ? this.getTotalQuantity(this.props.itemInCart)
                     : 0
                   : ""}
               </p>

@@ -4,9 +4,7 @@ import "./Item.scss";
 class Item extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      shortcutToAdd: true,
-    };
+    this.state = {};
   }
 
   onChange = (event) => {
@@ -24,8 +22,8 @@ class Item extends React.Component {
     const { addToCart, showDetails } = this.props;
     return (
       <Fragment>
-        <div className="product">
-          <div className="product-image">
+        <div className="item">
+          <div className="item-image">
             <img
               src={this.props.leg.imageURL}
               onClick={() => {
@@ -33,9 +31,9 @@ class Item extends React.Component {
               }}
             />
           </div>
-          <h5 className="product-brand">{this.props.leg.brand}</h5>
-          <h5 className="product-name">{this.props.leg.caption}</h5>
-          <p className="product-price">
+          <h5 className="item-brand">{this.props.leg.brand}</h5>
+          <h5 className="item-name">{this.props.leg.caption}</h5>
+          <p className="item-price">
             {this.props.leg.currency}
             {this.props.leg.price}
           </p>
@@ -54,7 +52,7 @@ class Item extends React.Component {
               </span>
             )}
           </p>
-          <div className="product-action">
+          <div className="item-action">
             {this.props.leg.displayOrder > 0 ? (
               <button
                 className="btn btn-success"

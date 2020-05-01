@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
       <Fragment>
         <footer>
-          <p className="footer-links">
+          <p className="footer-urls">
             <a
               href="https://github.com/paragrajhans/shopping-cart"
               target="_blank"
@@ -16,7 +16,7 @@ class Footer extends React.Component {
             </a>
             <span> / </span>
             <a href="mailto:prajhan1@binghamton.edu" target="_blank">
-              Need any help?
+              Got any questions?
             </a>
           </p>
           <p>

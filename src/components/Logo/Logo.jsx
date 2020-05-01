@@ -18,7 +18,6 @@ class Logo extends React.Component {
             }}
           >
             <span className="logo-header">Shopazon</span>
-            {/* <img src={Shopazon} alt="shopazon" /> */}
           </div>
         </div>
       </Fragment>
