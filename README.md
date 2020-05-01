@@ -30,6 +30,7 @@ Code Requirements:
 - The header is divided into 3 sections - Home, Shop & Cart. Clicking on each section navigates the page to that particular part of the page.
 - Clicking on any image in the Shop section will display detailed information about the product with a link to Navigate to the Product.
 - Adding/Removing an item from the Cart updates the number of items in the cart and the total amount which is displayed in the header.
+- The footer has links to my github repository and email address.
 
 ## Contributions
 
