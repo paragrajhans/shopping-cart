@@ -388,10 +388,11 @@ class Home extends React.Component {
         <div style={{ height: "80px" }} id="shop"></div>
         <div
           className="row justify-content-center"
-          style={{ marginTop: "10px" }}
+          style={{ marginTop: "20px" }}
         >
           <p style={{ marginRight: "5px", fontSize: "18px" }}>Sort By :</p>
           <DropDownList
+            className="sort-by"
             data={this.sortBy}
             onChange={this.onChange}
             style={{
@@ -432,8 +433,10 @@ class Home extends React.Component {
 
                 <div className="total-amount d-flex justify-content-end">
                   <button type="button" class="btn btn-primary checkout-btn">
-                    Total : {this.state.cart[0].currency}{" "}
-                    {this.state.totalPrice.toFixed(2)} {"(plus tax)"}
+                    <span>
+                      Total : {this.state.cart[0].currency}{" "}
+                      {this.state.totalPrice.toFixed(2)} {"(plus tax)"}
+                    </span>
                   </button>
                 </div>
               </div>

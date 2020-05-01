@@ -48,9 +48,25 @@
       }
     }
   }
+  .sort-by {
+    .k-dropdown-wrap {
+      padding-left: 10px;
+    }
+  }
   .total-amount {
-    margin-right: 20px;
+    margin-right: 15px;
     margin-top: 20px;
+
+    @media (max-width: 480px) {
+      justify-content: center !important;
+    }
+
+    // .checkout-btn:hover span {
+    //   display: none;
+    // }
+    // .checkout-btn:hover:before {
+    //   content: "Checkout";
+    // }
   }
 
   .scrollable-container {

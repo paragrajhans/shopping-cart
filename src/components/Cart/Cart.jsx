@@ -19,7 +19,7 @@ class Cart extends React.Component {
             this.props.list.map((value) => {
               return (
                 <Fragment>
-                  <div className="card" style={{ padding: "10px" }}>
+                  <div className="card">
                     <div className="row">
                       <div className="col-1">
                         <img src={value.imageURL} className="card-img" />
