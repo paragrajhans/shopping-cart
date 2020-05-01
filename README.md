@@ -1,4 +1,4 @@
-[Click here for Live Demo](https://paragrajhans.github.io/shopping-cart/) - (Some ease out styling is not supported)
+[Click here for Live Demo](https://paragrajhans.github.io/shopping-cart/)
 
 ## Installation
 
