@@ -1,3 +1,5 @@
+[Click here for Live Demo](https://paragrajhans.github.io/shopping-cart/)
+
 ## Installation
 
 Get the repository and run the following commands.
@@ -25,7 +27,6 @@ Code Requirements:
 - Accessibility Compliant
 
 ## My Approach
-
 
 - The header is divided into 3 sections - Home, Shop & Cart. Clicking on each section navigates the page to that particular part of the page.
 - A small gesture is displayed on refreshing the page.
