@@ -15,8 +15,6 @@
         background-color: orangered;
         justify-content: center;
       }
-      .k-dialog-content {
-      }
     }
 
     @media (max-width: 480px) {
@@ -45,6 +43,10 @@
         font-size: 40px;
       }
     }
+  }
+  .total-amount {
+    margin-right: 20px;
+    margin-top: 20px;
   }
 
   .scrollable-container {

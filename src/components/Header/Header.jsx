@@ -12,12 +12,12 @@ class Header extends React.Component {
   getTotalQuantity = (items) => {
     let quantity = 0;
 
-    for(let idx = 0; idx < items.length; idx++) { 
+    for (let idx = 0; idx < items.length; idx++) {
       quantity += items[idx].quantity;
     }
 
     return quantity;
-  }
+  };
 
   render() {
     const {
@@ -64,14 +64,20 @@ class Header extends React.Component {
                 Count :{" "}
                 {this.props.itemInCart
                   ? this.props.itemInCart.length
-                    // ? this.props.itemInCart.length
-                    ? this.getTotalQuantity(this.props.itemInCart)
+                    ? // ? this.props.itemInCart.length
+                      this.getTotalQuantity(this.props.itemInCart)
                     : 0
                   : ""}{" "}
               </p>
             </div>
             <div className="cart-total">
-              <p>Total : {this.props.totalPrice.toFixed(2)}</p>
+              <p>
+                Total :{" "}
+                {this.props.itemInCart.length
+                  ? this.props.itemInCart[0].currency
+                  : ""}{" "}
+                {this.props.totalPrice.toFixed(2)}
+              </p>
             </div>
           </div>
         ) : (
@@ -108,14 +114,20 @@ class Header extends React.Component {
                 Count :{" "}
                 {this.props.itemInCart
                   ? this.props.itemInCart.length
-                    // ? this.props.itemInCart.length
-                    ? this.getTotalQuantity(this.props.itemInCart)
+                    ? // ? this.props.itemInCart.length
+                      this.getTotalQuantity(this.props.itemInCart)
                     : 0
                   : ""}
               </p>
             </div>
             <div className="cart-total">
-              <p>Total : {this.props.totalPrice.toFixed(2)}</p>
+              <p>
+                Total :{" "}
+                {this.props.itemInCart.length
+                  ? this.props.itemInCart[0].currency
+                  : ""}
+                {this.props.totalPrice.toFixed(2)}
+              </p>
             </div>
           </div>
         )}

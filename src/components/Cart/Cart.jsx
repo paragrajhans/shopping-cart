@@ -55,7 +55,7 @@ class Cart extends React.Component {
                         <DropDownList
                           data={this.count}
                           name={"qty"}
-                          // defaultItem={value.quantity}
+                          className="qty-dropdown"
                           value={value.quantity}
                           onChange={(event) => {
                             changeQty(value, event.target.value);
